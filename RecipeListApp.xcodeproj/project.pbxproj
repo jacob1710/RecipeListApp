@@ -15,6 +15,7 @@
 		164BE2F626760D5200D9026D /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2F526760D5200D9026D /* Recipe.swift */; };
 		164BE2F826760E5B00D9026D /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2F726760E5B00D9026D /* RecipeModel.swift */; };
 		164BE2FA26760FFD00D9026D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BE2F926760FFD00D9026D /* DataService.swift */; };
+		16A55CFD26778C270036890E /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A55CFC26778C270036890E /* RecipeDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		164BE2F526760D5200D9026D /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		164BE2F726760E5B00D9026D /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		164BE2F926760FFD00D9026D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		16A55CFC26778C270036890E /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				164BE2E126760BF700D9026D /* RecipeListView.swift */,
+				16A55CFC26778C270036890E /* RecipeDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				164BE2F626760D5200D9026D /* Recipe.swift in Sources */,
+				16A55CFD26778C270036890E /* RecipeDetailView.swift in Sources */,
 				164BE2F826760E5B00D9026D /* RecipeModel.swift in Sources */,
 				164BE2E226760BF700D9026D /* RecipeListView.swift in Sources */,
 				164BE2E026760BF700D9026D /* RecipeListApp.swift in Sources */,

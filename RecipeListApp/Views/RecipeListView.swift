@@ -15,18 +15,28 @@ struct RecipeListView: View {
     
     
     var body: some View {
-        List(rModel.recipes){ r in
-            HStack(spacing: 20.0){
-                Image(r.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 50
-                           , height: 50, alignment: .center)
-                    .clipped()
-                    .cornerRadius(30.0)
-                Text(r.name)
+        NavigationView {
+            List(rModel.recipes){ r in
+                
+                NavigationLink(
+                    destination: RecipeDetailView(recipe: r),
+                    label: {
+                        HStack(spacing: 20.0){
+                            Image(r.image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 50
+                                       , height: 50, alignment: .center)
+                                .clipped()
+                                .cornerRadius(30.0)
+                            Text(r.name)
+                        }
+                    })
+                
+                
+                
             }
-            
+            .navigationBarTitle("All Recipes")
         }
     }
 }
