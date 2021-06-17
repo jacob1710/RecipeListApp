@@ -14,17 +14,20 @@ struct RecipeDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading){
+                
                 //MARK: Recipe Image
                 Image(recipe.image)
                     .resizable()
                     .scaledToFit()
+                
+                
                 //MARK: Ingredients
                 VStack(alignment: .leading) {
                     Text("Ingredients")
                         .font(.headline)
                         .padding([.top,.bottom], 3)
-                    ForEach(recipe.ingredients, id: \.self){ item in
-                        Text("• "+item)
+                    ForEach(recipe.ingredients){ item in
+                        Text("• "+item.name)
                             .padding([.top,.bottom],2)
                     }
                 }
