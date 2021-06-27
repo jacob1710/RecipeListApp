@@ -20,7 +20,13 @@ struct RecipeDetailView: View {
                 Image(recipe.image)
                     .resizable()
                     .scaledToFit()
+                //MARK: Recipe title
                 
+                Text(recipe.name)
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.top,20)
+                    .padding(.leading)
                 
                 
                 //MARK: Serving size picker
@@ -68,7 +74,6 @@ struct RecipeDetailView: View {
             }
             
         }
-        .navigationBarTitle(recipe.name)
     }
 }
 struct RecipeDetailView_Previews: PreviewProvider {
