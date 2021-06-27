@@ -70,7 +70,7 @@ struct RecipeFeaturedView: View {
             }
             VStack(alignment:.leading, spacing: 10){
                 Text("Preparation Time:")
-                    (.font(Font.custom("Avenir Heavy",size:16))
+                    .font(Font.custom("Avenir Heavy",size:16))
                 Text(rModel.recipes[tabSelectionIndex].prepTime)
                     .font(Font.custom("Avenir",size:15))
                 Text("Highlights:")
