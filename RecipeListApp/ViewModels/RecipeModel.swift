@@ -20,17 +20,67 @@ class RecipeModel: ObservableObject{
     
     static func getPortion(ingredient:Ingredient, recipeServings:Int, targetServings:Int)-> String{
         
-        //Get a single serving size
+        var portion = ""
+        var numerator = ingredient.num ?? 1
+        var denominator = ingredient.denom ?? 1
+        var wholePortions = 0
         
-        //Get target portion
+        if ingredient.num != nil{
+            //Get a single serving size
+            denominator *= recipeServings
+            
+            //Get target portion
+            numerator *= targetServings
+            
+            
+            //Reduce fraction
+            let divisor = Rational.greatestCommonDivisor(numerator, denominator)
+            
+            numerator /= divisor
+            denominator /= divisor
+            
+            
+            
+            //Get whole portion if numerator>denominator
+            
+            if numerator>=denominator{
+                wholePortions = numerator/denominator
+                numerator = numerator%denominator
+                
+                portion += String(wholePortions)
+                
+            }
+            
+            //Express remainder as fraction
+            if numerator > 0{
+                //Assign remainder as fraction to the portion string
+                portion += wholePortions > 0 ? " " : ""
+                portion += "\(numerator)/\(denominator)"
+            }
+        }
         
-        //Reduce fraction
+        if var unit = ingredient.unit{
+            //Calculate suffix for unit
+            if wholePortions > 1 || (wholePortions==1 && numerator>0){
+                if unit.suffix(2) == "ch"{
+                    unit+="es"
+                }else if unit.suffix(1) == "f"{
+                    unit = String(unit.dropLast())
+                    unit += "ves"
+                    
+                }else{
+                    unit+="s"
+                }
+            }
+            
+            
+            portion += ingredient.num == nil && ingredient.denom == nil ? "": " "
         
-        //Get whole portion if numerator>denominator
+            
+            
+            return portion+unit
+        }
         
-        
-        //Express remainder as fraction
-        
-        return String(targetServings)
+        return portion
     }
 }

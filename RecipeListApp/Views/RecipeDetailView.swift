@@ -26,6 +26,7 @@ struct RecipeDetailView: View {
                 //MARK: Serving size picker
                 VStack {
                     Text("Select your serving size")
+                        .padding()
                     Picker("",selection: $selectedServingSize){
                         Text("2").tag(2)
                         Text("4").tag(4)
@@ -45,7 +46,7 @@ struct RecipeDetailView: View {
                     
                     ForEach(recipe.ingredients){ item in
                         Text("• "+RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) +
-                                " "+item.name)
+                                " "+item.name.lowercased())
                         
                             .padding([.top,.bottom],2)
                     }
